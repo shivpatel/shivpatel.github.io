@@ -1,0 +1,104 @@
+$background-color: #fff;
+$bright-text-color: #000;
+$dark-text-color: #828282;
+$text-select-background: #000;
+$text-select-color: #fff;
+$link-text-color: #0366d6;
+
+// run sass: sass --watch scss/:css/
+
+html, body {
+    background: $background-color;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: $dark-text-color;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: .8em;
+    line-height: 1.7em;
+    margin: 0px 0px 15px 0px;
+}
+
+a, a:visited {
+    color: $bright-text-color;
+    text-decoration: none;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    font-weight: 700;
+}
+
+a:hover, a:active {
+    color: $link-text-color;
+    text-decoration: none;
+}
+
+::selection {
+  background: $text-select-background;
+  color: $text-select-color;
+}
+
+::-moz-selection {
+  background: $text-select-background;
+  color: $text-select-color;
+}
+
+.vertical-align {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#top {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: $background-color;
+}
+
+#top h1 {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+#top-title {
+    font-weight: 700;
+    color: $bright-text-color;
+}
+
+#top-desc {
+    font-weight: 400;
+}
+
+#top-resume {
+    margin: 15px 0px 10px 0px;
+}
+
+.social-icons i {
+    font-size: 1.3em;
+    margin-right: 5px;
+    margin-top: 5px;
+    opacity: .5;
+}
+
+.social-icons i:hover {
+    opacity: 1;
+}
