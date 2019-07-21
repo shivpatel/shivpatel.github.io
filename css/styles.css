@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  margin: 0;
+  margin: 25px 0;
   padding: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -56,7 +56,7 @@ a:hover, a:active {
 }
 
 .vertical-align {
-  height: 100vh;
+  min-height: calc(100vh - 50px);
   display: flex;
   align-items: center;
 }
