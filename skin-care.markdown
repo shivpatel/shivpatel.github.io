@@ -8,7 +8,7 @@ permalink: /skin-care/
 
 Making my skin care notes available to everyone. Hope it helps!
 
-**Tip** These notes are specific to my goals. Use this as a starting place and compare it to other information you find online to build the perfect routine for you.
+**Disclaimer** I am not a medical professional nor does this page constitute as medical advice. See a dermatologist or medical professional to get proper treatment.
 
 ## Routine
 
