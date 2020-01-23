@@ -4,7 +4,7 @@ title: Skin Care
 permalink: /skin-care/
 ---
 
-*Last updated 01/22/2020*
+*Last updated 01/23/2020*
 
 Making my skin care notes available to everyone. Hope it helps!
 
@@ -52,6 +52,11 @@ Looking for physical sunscreens that use **zinc oxide**, is somewhat water resis
 - Neutrogena Sheer Zinc Dry-Touch Face Sunscreen with SPF 50 ($5.49/oz) **{S}**
 - Aveeno Positively Mineral Sensitive Face Sunscreen SPF 50 ($4.99/oz) **{S}**
 
+<div style="background:#fbf5ed;padding:15px 25px;margin:15px 0;">
+    <h5 style="font-weight:700;">Shopping Tip</h5>
+    <p><i>Aveeno Positively Mineral Sensitive Sunscreen</i> is available in a facial (2 oz) and body (3 oz) version. Both are about the same price and share the same ingredient list. However, the face version has more glycerin (hydrator/protectant) than polyhydroxystearic acid (emulsifier). It's a positive if you're ok with spending the same for 1 oz less.</p>
+</div>
+
 ### Sunscreens (Body)
 Looking for physical sunscreens that use **zinc oxide**, is somewhat water resistant, and fights both UVA/UVB.
 
@@ -66,6 +71,11 @@ Looking for body lotions with moderate SPF protection and no petrolatum, sulfate
 *Research from 01/21/2020 [1] shows chemical sunscreens may be absorbed into the bloodstream at levels that exceed safety thresholds. I have yet to locate a body lotion that meets the above requirements without using chemical sunscreen. My current go-to is one of the below non-SPF lotions paired with a seperate physical sunscreen of choice.*
 
 - Aveeno Sheer Hydration Daily Moisturizing Lotion ($0.39/oz) **{S}**
+
+<div style="background:#fbf5ed;padding:15px 25px;margin:15px 0;">
+    <h5 style="font-weight:700;">Shopping Tip</h5>
+    <p>Aveeno seems to be moving all of their body lotions to petrolatum-inclusive formulas (no good). When buying <i>Aveeno Sheer Hydration Daily Moisturizing Lotion</i>, make sure the product says <strong>Sheer Hydration</strong> and is colored light-blue near the pump.</p>
+</div>
 
 ### Lip Balms
 Looking for lip balms with moderate SPF protection and no petrolatum, sulfates, or parabens. Non-SPF options for overnight use only.
