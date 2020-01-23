@@ -30,9 +30,13 @@ Products listed in order:
 
 For each product listed, I have analyzed the ingredients using [https://www.skincarisma.com/ingredient-analyzer](https://www.skincarisma.com/ingredient-analyzer) and ensured the product meets my goals without adding additional issues. In theory, you should be able to pick any from each list. 
 
+#### Legend
+- **{VC}** = Vitamin C or a derivative; used for brightening, skin tone, and dark spots.
+- **{S}** = Contains silicone. May not be suiteable if other, irritating ingredients are included.
+
 ### Serums
 
-You'll find all the serums listed below available via The Ordinary. **{VC}** designates Vitamin C or a derivative; used for brightening, skin tone, and dark spots. Always apply water soluble serums before oil soluble.
+You'll find all the serums listed below available via The Ordinary. Always apply water soluble serums before oil soluble.
 
 - Niacinamide (B3) 10% + Zinc 1% - For blemishes and congestion.
 - Alpha Arbutin 2% + HA - For dark spots and pigmentation.
@@ -42,14 +46,22 @@ You'll find all the serums listed below available via The Ordinary. **{VC}** des
 - **{VC}** Ascorbyl Tetraisopalmitate Solution 20% in Vitamin F - Oil soluble derivative of Vit C. 
 
 ### Sunscreens (Facial)
-Looking for physical sunscreens that use **zinc oxide**, is somewhat water resistant, and fights both UVA/UVB. Products designated with **{S}** contain silicone and may not be suiteable if other, irritating ingredients are included.
+Looking for physical sunscreens that use **zinc oxide**, is somewhat water resistant, and fights both UVA/UVB.
 
 - EltaMD UV Clear Broad-Spectrum SPF 46 ($20.58/oz)
 - Neutrogena Sheer Zinc Dry-Touch Face Sunscreen with SPF 50 ($5.49/oz) **{S}**
 - Aveeno Positively Mineral Sensitive Face Sunscreen SPF 50 ($4.99/oz) **{S}**
 
+### Sunscreens (Body)
+Looking for physical sunscreens that use **zinc oxide**, is somewhat water resistant, and fights both UVA/UVB.
+
+- Neutrogena Sheer Zinc Dry-Touch Sunscreen Lotion with SPF 50 ($5.49/oz) **{S}**
+- Aveeno Positively Mineral Sensitive Sunscreen Lotion SPF 50 ($3.32/oz) **{S}**
+- Aveeno Baby Continuous Protection Zinc Oxide Mineral Sunscreen, SPF 50 ($3.32/oz) **{S}**
+- Coppertone Pure & Simple Adult SPF 50 Lotion ($1.50/oz) **{S}**
+
 ### Body Lotions
-Looking for body lotions with moderate SPF protection and no petrolatum, sulfates, or parabens. Products designated with **{S}** contain silicone and may not be suiteable if other, irritating ingredients are included.
+Looking for body lotions with moderate SPF protection and no petrolatum, sulfates, or parabens.
 
 *Research from 01/21/2020 [1] shows chemical sunscreens may be absorbed into the bloodstream at levels that exceed safety thresholds. I have yet to locate a body lotion that meets the above requirements without using chemical sunscreen. My current go-to is one of the below non-SPF lotions paired with a seperate physical sunscreen of choice.*
 
