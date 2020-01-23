@@ -55,6 +55,11 @@ Looking for body lotions with moderate SPF protection and no petrolatum, sulfate
 
 - Aveeno Sheer Hydration Daily Moisturizing Lotion ($0.39/oz) **{S}**
 
+### Lip Balms
+Looking for lip balms with moderate SPF protection and no petrolatum, sulfates, or parabens. Non-SPF options for overnight use only.
+
+- Burt's Bees All-Weather SPF 15 Moisturizing Lip Balm ($4.39/stick)
+
 ## Acne Treatment
 
 ### Benzoyl Peroxide
