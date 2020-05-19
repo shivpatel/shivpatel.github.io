@@ -36,7 +36,7 @@ BrokerageLink allows you to open a free brokerage account *within* your 401(k). 
 
 2. **Harder to automate.**
 
-    You can automate funds going into BrokerageLink, but good luck trying to get ETF and stock trades to auto execute on those funds. You'll have to login every time you get paid to buy more shares when the market is open.
+    You can automate funds going into BrokerageLink, but good luck trying to get ETF and stock trades to auto execute on those funds. You'll have to login every time you get paid to buy more shares when the market is open. Note it may take longer (hours if not days) to fulfill some ETF orders depending on how much trading volume that ETF has.
 
 3. **Your mileage can vary greatly.**
 
