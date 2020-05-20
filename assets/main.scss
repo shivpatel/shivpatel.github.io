@@ -1,0 +1,32 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+$color: #3369e7;
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.site-header {
+    border-top-color: $color;
+}
+
+.site-title {
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+a,
+a:visited {
+    color: $color;
+}
+
+a:hover {
+    color: #06253d;
+    text-decoration: none;
+}
