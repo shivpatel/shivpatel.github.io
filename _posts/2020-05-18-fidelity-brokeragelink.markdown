@@ -5,7 +5,7 @@ date:   2020-05-18 12:00:00 -0500
 categories: investing
 ---
 
-*Disclaimer: I am not a financial advisor and this post does not constitue as financial advice. Please consult a financial professional before acting on any information.*
+*Disclaimer: I am not a financial advisor and this post does not constitute as financial advice. Please consult a financial professional before acting on any information.*
 
 If your employer uses Fidelity to manage your 401(k), now's the time to see if you have the option to enroll in BrokerageLink.
 
