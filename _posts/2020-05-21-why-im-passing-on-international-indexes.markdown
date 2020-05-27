@@ -15,7 +15,7 @@ Should you add international indexes to your investment portfolio? This is the m
 
     Take a look at [this table](https://en.wikipedia.org/wiki/List_of_countries_by_largest_historical_GDP#By_average_values_of_GDP_(nominal)) that shows the ten largest economies by GDP per five year period. Notice that the primary leaders in GDP have stayed consistent. If you're looking for **consistent**, long-term returns it makes sense to stick with them. Sure, an emerging market or underdog will outperform here or there. But good luck finding a consistent performer like the US, China, and Japan. In the event that the tables have turned for good, you've got sufficient time (years) to rebalance your portfolio and join the new, consistent leader.   
 
-2. **Don't invest in something you don't know**
+2. **Don't invest in something you don't understand**
 
     Warren Buffet says "Rule No.1 is never lose money. Rule No.2 is never forget rule number one." You can only adhere to those rules if you strictly invest in things you understand. I personally don't keep up with foreign politics, regulations, and market information. Until that changes, I will keep my money and focus on economies I understand.
 

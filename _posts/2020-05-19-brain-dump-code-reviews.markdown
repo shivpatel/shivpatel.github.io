@@ -12,7 +12,7 @@ Here's what I've learned about improving your PRs and code reviews. This post wi
 - **Talk** with fellow engineers. Implementations are **future proof** when more than one brain is involved before any code is touched.
 - Each change or addition of code should be **meaningful**. If a new developer cannot decipher your intentions, you've likely made things too complicated or abstracted.
 - **Add comments.** Comments should fill-in-the-blanks between lines of code; don't leave your reader with who/what/when/where/why questions. And remember what seems like an obvious choice today will confuse the hell out of you in 6 months.
-- If you're reacing 500+ lines of code added/changed, you've crossed the threshold for a PR. It's impossible for others to give you detailed feedback on your work. Work with your team to **split your feature into smaller, bite-size portions** that can be introduced to the codebase.
+- If you're reacing 100+ lines of code added/changed, you've crossed the threshold for a PR. It's impossible for others to give you detailed feedback on your work. Work with your team to **split your feature into smaller, bite-size portions** that can be introduced to the codebase.
 - **Fully test your own code!** You'd be surprised how often developers overlook this. Don't waste your team's time on incomplete PRs. Test each acceptance criteria locally. If it's not possible to test locally, queue a branch build and test in an available environment.
 - **Add unit tests** where you deem fit.
 
