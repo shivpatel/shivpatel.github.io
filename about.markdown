@@ -16,3 +16,7 @@ I also like learning and sharing knowledge on investing whether it's Bogleheads-
 
 - [Transformation Through Unbundling: Visualizing the Global FinTech Ecosystem (2018)](https://dl.acm.org/citation.cfm?id=3309227)
 - [ecoxight: Discovery, Exploration, and Analysis of Business Ecosystems Using Interactive Visualization (2018)](https://dl.acm.org/citation.cfm?id=3185047)
+
+<div style="margin-top:50px;text-align:center;">
+    <img src="/assets/img/2020-membership-badge-2.png" style="margin:0 auto 0;">
+</div>
