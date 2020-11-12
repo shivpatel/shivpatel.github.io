@@ -22,12 +22,13 @@ title: Shiv Patel
 domain: shivpatel.io
 email: blog@shivpatel.io
 description: >- # this means to ignore newlines until "baseurl:"
-  Notes on web development and investing.
+  Notes on software engineering and investing.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shivpatel.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: shivpatel
 github_username:  shivpatel
 show_excerpts: true
+google_analytics: UA-182842457-1
 
 # Build settings
 theme: minima
