@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How iCloud Photos architecture causes slow \"uploads\""
+title:  "Why iCloud Photos is slow to \"upload\" on macOS"
 date:   2020-11-12 00:00:00 -0500
 categories: software
 ---
