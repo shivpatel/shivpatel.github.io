@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using AWS SQS to trigger Lambda aliases</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <header>
+    <h2>Shiv - Notes on software engineering.</h2>
+    <p><a href="/">Notes</a> / <a href="//read.cv/shiv">CV</a> / <a href="//github.com/shivpatel">GitHub</a> / <a href="//linkedin.com/in/shivpatel0">LinkedIn</a></p>
+  </header>
+  <main>
+    <h1>Using AWS SQS to trigger Lambda aliases</h1>
+    <p>January 2020</p>
+    <p>If you’re using terraform, use the Lambda alias' ARN when defining your
+      <code>aws_lambda_event_source_mapping</code>.
+    </p>
+    <pre><code>
+resource "aws_lambda_alias" "test_alias" {
+  name             = "testalias"
+  function_name    = "${aws_lambda_function.lambda_function_test.arn}"
+}
+
+resource "aws_lambda_event_source_mapping" "example" {
+  event_source_arn = "${aws_sqs_queue.sqs_queue_test.arn}"
+  function_name    = "${aws_lambda_alias.test_alias.arn}"
+}
+</code></pre>
+    <p>If you’re using the AWS Console, setup the trigger via the Lambda Alias page; not the SQS dashboard.</p>
+    <img src="/img/lambda-alias-add-trigger.png" alt="Add trigger to Lambda alias via AWS Console">
+  </main>
+</body>
+
+</html>

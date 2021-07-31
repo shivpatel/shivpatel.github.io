@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Digital Ocean's load balancer with Docker containers and proxy pass</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <header>
+    <h2>Shiv - Notes on software engineering.</h2>
+    <p><a href="/">Notes</a> / <a href="//read.cv/shiv">CV</a> / <a href="//github.com/shivpatel">GitHub</a> / <a href="//linkedin.com/in/shivpatel0">LinkedIn</a></p>
+  </header>
+  <main>
+    <h1>Use Digital Ocean's load balancer with Docker containers and proxy pass</h1>
+    <p>January 2020</p>
+    <p>Digital Ocean recently introduced proxy passing on their load balancers. Without proxy passing all requests going to your web server/container will have the source IP of your load balancer. With proxy pass enabled you’ll be able to access the client’s real IP. This is a must-have for rate limiting, logging, or restricting resources based on IP/CIDR ranges.</p>
+    <p>This post assumes you’ve already:</p>
+    <ol>
+      <li>Created a Digital Ocean Load Balancer.</li>
+      <li>Connected your droplets and underlying containers.</li>
+      <li>Your client was getting responses when <code>Proxy Pass</code> is disabled (default).</li>
+      <li>You enabled <code>Proxy Pass</code> and nothing works anymore.</li>
+    </ol>
+    <p>How we’ll solve this:</p>
+    <ol>
+      <li>Introduce a second Docker container for NGINX</li>
+      <li>a) docker-compose or b) Kubernetes Pod w/ multiple containers</li>
+    </ol>
+    <h2>1. Setting up our NGINX configuration</h2>
+    <p>Setup the <code>nginx.conf</code> file shown below, making sure to change the following values:</p>
+    <ul>
+      <li><code>[LB_IP]</code> - The public IP address for your load balancer</li>
+      <li><code>[SERVICE_OR_POD_NAME]</code> - The name of the web app service (docker-compose) or the container (Kubernetes). Just remember to use the same name in the next step.</li>
+      <li><code>[PORT]</code> - The port your web app container will be exposing. You can omit this if you’re using <code>80</code>.</li>
+    </ul>
+    <pre>
+      <code>
+user  nginx;
+worker_processes  1;
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+    proxy_set_header X-Real-IP       $proxy_protocol_addr;
+    proxy_set_header X-Forwarded-For $proxy_protocol_addr;
+    log_format main '$proxy_protocol_addr - $remote_user [$time_local] '
+                        '"$request" $status $body_bytes_sent '
+                        '"$http_referer" "$http_user_agent"';
+    access_log  /var/log/nginx/access.log  main;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    server {
+        server_name localhost;
+        listen 80   proxy_protocol;
+        set_real_ip_from [LB_IP];
+        real_ip_header proxy_protocol;
+        location / {
+            proxy_pass       http://[SERVICE_OR_POD_NAME]:[PORT];
+            proxy_set_header Host            $host;
+            proxy_set_header X-Real-IP       $proxy_protocol_addr;
+            proxy_set_header X-Forwarded-For $proxy_protocol_addr;
+        }
+    }
+
+}
+      </code>
+    </pre>
+    <h2>2a. Implementing for standalone Docker with docker-compose</h2>
+    <p>If you’re using Kubernetes, briefly skim this section and then proceed to 2b for the actual Pod implementation you’ll use.</p>
+    <p>You can do this step without docker-compose, but the <code>docker-compose.yml</code> file makes managing two containers per droplet easier. The main takeway is the bridged networking setup (called <code>backbone</code> in this example). This will allow our <code>nginx</code> service to talk with <code>myApp</code>.</p>
+    <pre>
+      <code>
+version: "2"
+services:
+    nginx:
+      image: nginx
+      restart: always
+      ports:
+        - "80:80"
+      networks:
+        - backbone
+      volumes:
+        - nginx.conf:/etc/nginx/nginx.conf
+    myApp: # use your value for [SERVICE_OR_POD_NAME] here
+      image: myImage:1.0.0
+      restart: always
+      networks:
+        - backbone
+      expose: 
+        - 80 # use your value for [PORT] here
+networks:
+  backbone:
+    driver: bridge
+      </code>
+    </pre>
+    <p>Once you’ve copied the <code>nginx.conf</code> and <code>docker-compose.yml</code> file to your droplet, run <code>docker-compose up -d</code> on the droplet. Your load balancer should be healthy within a few minutes.</p>
+    <h2>2b. Implementing with Kubernetes</h2>
+    <p>Very similar to the configuration above, except in Pod format for Kubernetes:</p>
+    <pre>
+      <code>
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+  labels:
+    app: test
+spec:
+  containers:
+  - name: myApp # use your value for [SERVICE_OR_POD_NAME] here
+    image: myImage:1.0.0
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: nginx-proxy-config
+      mountPath: /etc/nginx/nginx.conf
+      subPath: nginx.conf
+  volumes:
+  - name: nginx-proxy-config
+    configMap:
+      name: nginx-conf
+      </code>
+    </pre>
+  </main>
+</body>
+
+</html>
