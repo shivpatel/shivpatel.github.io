@@ -46,7 +46,17 @@ The agent framework landscape moves at a pace that guarantees obsolescence. Micr
 
 Adopting a framework or third-party platform is how organizations fall behind. There is always something new, and best practices are evolving at a pace that no middleware vendor can match. The better strategy is to own something minimal and native that you can vibe code a change to overnight. A 200 line agent loop written against the Claude API has no dependency risk. It has no upgrade path to manage. It is yours.
 
-### 2.3 A Platform Slows You Down with Opinions
+### 2.3 Building Your Own Internal Platform Is the Same Trap
+
+The natural response to framework churn is to build something in-house: an internal agent platform that the whole organization can use. Teams rationalize it as "owning our destiny." In practice, it is the same trap with a different owner.
+
+An internal platform imposes all the same problems as a third-party one. It encodes architectural opinions about how memory works, how tools are registered, how conversations are threaded. Teams building on top of it inherit those opinions whether or not they fit their use case. The platform team becomes a dependency that other teams are blocked on. The backlog grows. Features lag model capabilities by weeks or months, exactly as with external vendors, because now you are the vendor.
+
+Worse, internal platforms carry organizational gravity. Once multiple teams build on a shared platform, it becomes politically difficult to change. The platform team cannot deprecate things that block production workflows. The architecture calcifies around the decisions made in the first sprint, when the team knew the least about what they were building.
+
+The instinct to "centralize agent infrastructure" is understandable but wrong. It assumes the agent framework is the scarce resource. It is not. The agent is cheap. The business logic, the integrations, and the skills are what cost time and should be shared. Share those, not the scaffolding.
+
+### 2.4 A Platform Slows You Down with Opinions
 
 Agent platforms impose architectural decisions on your team: how memory works, how tools are registered, how conversations are threaded, how errors are handled. These decisions may be sensible defaults for a generic use case, but they are rarely optimal for yours. When the platform's opinion conflicts with your requirement, you are either fighting the framework or filing a feature request and waiting.
 
