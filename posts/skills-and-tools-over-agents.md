@@ -46,7 +46,17 @@ The agent framework landscape moves at a pace that guarantees obsolescence. Micr
 
 Adopting a framework or third-party platform is how organizations fall behind. There is always something new, and best practices are evolving at a pace that no middleware vendor can match. The better strategy is to own something minimal and native that you can vibe code a change to overnight. A 200 line agent loop written against the Claude API has no dependency risk. It has no upgrade path to manage. It is yours.
 
-### 2.3 Building Your Own Internal Platform Is the Same Trap
+### 2.3 Nobody Has the Experience to Build a Platform (Yet)
+
+This is not an argument against platforms in general. Kubernetes works. Terraform works. The teams who built those had accumulated years of production experience across thousands of deployments, in domains where the underlying primitives had stabilized. The abstractions they encoded were hard-won and well understood.
+
+Agent platforms today have none of that foundation. Anthropic, OpenAI, and Google are each changing their own architectural guidance month to month. Best practices for memory, context management, and tool execution are still being debated in public. Most organizations have yet to ship an agent with meaningful business impact at scale. If the leading AI companies have not converged on a stable model, no one inside your organization is in a position to encode one.
+
+Building an opinionated agent platform now means making architectural decisions from a position of maximum ignorance. The teams who build on top of it will inherit those decisions. When the field inevitably moves, your platform will be standing between your organization and the latest industry practices.
+
+The right time to build platform abstractions is after you have operated multiple agents in production, learned what they have in common, and identified the patterns (if any) worth encoding. I'd bet most of us aren't there today.
+
+### 2.4 Building Your Own Internal Platform Is the Same Trap
 
 The natural response to framework churn is to build something in-house: an internal agent platform that the whole organization can use. Teams rationalize it as "owning our destiny." In practice, it is the same trap with a different owner.
 
@@ -55,12 +65,6 @@ An internal platform imposes all the same problems as a third-party one. It enco
 Worse, internal platforms carry organizational gravity. Once multiple teams build on a shared platform, it becomes politically difficult to change. The platform team cannot deprecate things that block production workflows. The architecture calcifies around the decisions made in the first sprint, when the team knew the least about what they were building.
 
 The instinct to "centralize agent infrastructure" is understandable but wrong. It assumes the agent framework is the scarce resource. It is not. The agent is cheap. The business logic, the integrations, and the skills are what cost time and should be shared. Share those, not the scaffolding.
-
-### 2.4 A Platform Slows You Down with Opinions
-
-Agent platforms impose architectural decisions on your team: how memory works, how tools are registered, how conversations are threaded, how errors are handled. These decisions may be sensible defaults for a generic use case, but they are rarely optimal for yours. When the platform's opinion conflicts with your requirement, you are either fighting the framework or filing a feature request and waiting.
-
-With a native API integration, every architectural decision is yours. You pick the memory strategy that fits your domain. You pick the error handling that matches your reliability requirements. You pick the tool execution model that aligns with your security posture. The code is short enough to understand completely and simple enough to change in an afternoon.
 
 ---
 
@@ -162,7 +166,7 @@ My prescription is simple:
 - **A code execution sandbox.** Give the agent a filesystem and a runtime. This is how it handles scale problems like generating reports, processing data, and building artifacts without requiring a pre-built tool for every task.
 - **Authenticated tool calls.** Each tool call passes the user's OAuth token. Your existing APIs enforce authorization. No new security layer required.
 - **A growing library of skills.** Composable, versionable, shareable folders of instructions, scripts, and domain knowledge. Skills are your competitive advantage. They encode your organization's expertise in a format that any agent can consume. Share them across teams.
-- **A growing library of integrations.** Thin wrappers around your internal APIs, described in a format the model can understand. Not MCP servers; just tool definitions and HTTP calls. Add them as needed, retire them when the agent can write the integration code itself.
+- **A growing library of integrations.** Not MCP servers; just tool definitions and HTTP calls. Add them as needed, retire them when the agent can write the integration code itself.
 - **Knowledge bases.** Your documents, policies, and procedures in a format the agent can retrieve and reference. Used good ole RAG or vector search if needed. Keep it simple.
 - **Lightweight observability.** Structured logging of every loop iteration. Route it to MLflow, Braintrust, or your existing logging infrastructure. Monitor token spend, latency, and tool-call success rates.
 
