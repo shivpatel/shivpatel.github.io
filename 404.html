@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    (function () {
+      var targetDomain = "https://ai-uncluttered.com";
+
+      // Get current path, query, and hash
+      var path = window.location.pathname || "/";
+      var query = window.location.search || "";
+      var hash = window.location.hash || "";
+
+      // Replace "/thoughts/" with "/p/"
+      if (path.includes("/thoughts/")) {
+        path = path.replace("/thoughts/", "/p/");
+      }
+
+      // Build new URL
+      var newUrl = targetDomain + path + query + hash;
+
+      // Redirect
+      window.location.replace(newUrl);
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
